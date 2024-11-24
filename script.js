@@ -28,7 +28,7 @@ function autoSlide() {
     }
 }
 
-const autoSlideInterval = setInterval(autoSlide, 5000); // 5 segundos porque sim
+const autoSlideInterval = setInterval(autoSlide, 13000); // 5 segundos porque sim
 
 let startX = 0;
 let isDragging = false;
@@ -117,11 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
       window.speechSynthesis.speak(msg);
     }
   });
-});
-
-document.getElementById('visao-icon').addEventListener('click', function() {
-  const colorBlindnessSelector = document.querySelector('.color-blindness-selector');
-  colorBlindnessSelector.classList.toggle('visible');
 });
 
 function readTextOnClick(event) {

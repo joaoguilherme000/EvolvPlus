@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// menu aparece
+document.getElementById('visao-icon').addEventListener('click', function() {
+  const colorBlindnessSelector = document.querySelector('.color-blindness-selector');
+  colorBlindnessSelector.classList.toggle('visible');
+});
+
 // Função para ler o texto clicado
 function readTextOnClick(event) {
   // faz calar a boca

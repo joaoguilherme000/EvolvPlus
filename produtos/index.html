@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+    <defs>
+      <!-- Filtro para Deuteranopia -->
+      <filter id="deuteranopia">
+        <feColorMatrix type="matrix" values="0.625 0.375 0 0 0 0.7 0.3 0 0 0 0 0.3 0.7 0 0 0 0 0 1 0"/>
+      </filter>
+      <!-- Filtro para Protanopia -->
+      <filter id="protanopia">
+        <feColorMatrix type="matrix" values="0.567 0.433 0 0 0 0.558 0.442 0 0 0 0 0.242 0.758 0 0 0 0 0 1 0"/>
+      </filter>
+      <!-- Filtro para Tritanopia -->
+      <filter id="tritanopia">
+        <feColorMatrix type="matrix" values="0.95 0.05 0 0 0 0 0.433 0.567 0 0 0 0.475 0.525 0 0 0 0 0 1 0"/>
+      </filter>
+    </defs>
+  </svg>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="produtos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Peta:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="../imagens/mascote.png">
+  <title>Produtos</title>
+</head>
+<body>
+  <header class="lexend-deca-fonte">
+
+    <a href="../index.html">
+      <img src="../imagens/logo.png" alt="logo" class="logo" aria-label="Voltando ao Início">
+    </a>
+    
+    <ul class="nav-container">
+      <li class="nav-item"><a href="../index.html">INÍCIO</a></li>
+      <li class="nav-item"><a href="index.html">PRODUTOS</a></li>
+      <li class="nav-item"><a href="../sobre/index.html">SOBRE</a></li>
+      <li class="nav-item"><a href="../quiz/index.html">QUIZ</a></li>
+      <select id="colorBlindness" aria-label="Escolha o tipo de visão">
+        <option value="normal">Normal</option>
+        <option value="deuteranopia">Deuteranopia</option>
+        <option value="protanopia">Protanopia</option>
+        <option value="tritanopia">Tritanopia</option>
+        <option value="sem-visao">Sem visão</option>
+      </select>
+      <li class="nav-icones"><img src="../imagens/lupa.png" alt="Pesquisar" aria-label="Pesquisar"></li>
+      <li class="nav-icones"><img src="../imagens/carrinho.png" alt="Carrinho de compras" aria-label="Carrinho de compras"></li>
+      <li class="nav-icones"><img src="../imagens/usuario.png" alt="Seu Perfil" aria-label="Seu Perfil"></li>
+    </ul>
+
+  </header>
+  <div class="lexend-peta-fonte banner">
+    <img src="../imagens/video2.gif" alt="banner">
+    <h3>
+      Produtos
+    </h3>
+  </div>
+  <section class="lexend-deca-fonte">
+    <div class="item">
+      <img src="../imagens/produto1.jpg" alt="produto">
+      <h3>
+        DISPOSITIVOS
+      </h3>
+      <p class="descricao">
+        Desenvolvido para pessoas com deficiência física, este dispositivo
+        acompanha os movimentos da cabeça e dos olhos, proporcionando maior
+        autonomia e acessibilidade no uso de tecnologias.
+      </p>
+      <a href="#nao-disponivel">Compre agora</a>
+    </div>
+    <div class="item">
+      <img src="../imagens/produto2.jpg" alt="produto">
+      <h3>
+        MOUSE
+      </h3>
+      <p class="descricao">
+        Mouses projetados para atender diferentes necessidades de 
+        acessibilidade, incluindo modelos com comandos táteis, botões 
+        personalizáveis e designs ergonômicos.
+      </p>
+      <a href="#nao-disponivel">Compre agora</a>
+    </div>
+    <div class="item">
+      <img src="../imagens/produto3.jpg" alt="produto">
+      <h3>
+        TECLADO
+      </h3>
+      <p class="descricao">
+        teclados incluem opções táteis com layouts 
+        em braile ou comandos simplificados, com design moderno e personalizáveis
+      </p>
+      <a href="#nao-disponivel">Compre agora</a>
+    </div>
+    <div class="item">
+      <img src="../imagens/produto4.jpg" alt="produto">
+      <h3>
+        FONES
+      </h3>
+      <p class="descricao">
+        Destinados a pessoas com deficiência auditiva, 
+        fones que convertem sons em vibrações, proporcionando 
+        uma alternativa sensorial para identificar estímulos sonoros.
+      </p>
+      <a href="#nao-disponivel">Compre agora </a>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

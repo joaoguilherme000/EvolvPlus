@@ -1,3 +1,6 @@
+/* porque o comentario dessa merda é com asterisco meu deus */
+/* como centralizar div google pesquisar */
+
 .lexend-peta-fonte {
   font-family: "Lexend Peta", sans-serif;
   font-optical-sizing: auto;
@@ -58,8 +61,6 @@ body {
 	transition: filter 0.3s ease-in-out;
 }
 
-/* filtro */
-
 select {
   appearance: none;
   -webkit-appearance: none;
@@ -77,21 +78,13 @@ select {
 
 select:focus {
   outline: none;
-  border-color: #0078d4; /* Cor de destaque */
+  border-color: #0078d4;
   box-shadow: 0 0 5px rgba(0, 120, 212, 0.5);
 }
 
 select:hover {
-  border-color: #0078d4; /* Cor de destaque */
+  border-color: #0078d4;
   box-shadow: 0 0 5px rgba(0, 120, 212, 0.5);
-}
-
-.color-blindness-selector {
-  display: none;
-}
-
-.color-blindness-selector.visible {
-  display: block; 
 }
 
 body.deuteranopia {
@@ -105,7 +98,6 @@ body.protanopia {
 body.tritanopia {
   filter: url(#tritanopia);
 }
-/* fim dele */
 
 /* padrão header*/
 header {
@@ -119,7 +111,6 @@ header {
 header > a:first-of-type {
 	margin-left: 11vh;
 }
-
 
 .logo {
 	width: 11vh;
@@ -192,43 +183,3 @@ header > a:first-of-type {
   box-shadow: 0 0 9px rgba(0, 120, 212, 0.5);
 }
 /* padrão header*/
-
-section {
-	display: flex;
-	align-items: center;
-	height: 89vh;
-	width: auto;
-	padding: 3vh;
-	flex-direction: column;
-	overflow: auto;
-	box-sizing: border-box;
-	background: linear-gradient(90deg, #041c4d, #3b616f, #041c4d, #3b616f);
-	background-size: 400% 100%;
-	animation: gradientAnimation 8s ease-out infinite;
-}
-
-@keyframes gradientAnimation {
-	0% {
-			background-position: 0% 50%;
-	}
-	100% {
-			background-position: 100% 50%;
-	}
-}
-
-
-h2 {
-	align-self: center;
-	text-align: center;
-	font-size: 7vh;
-	padding: 3vh;
-	margin-top: 2vh;
-	color: #000;
-}
-
-p {
-	text-align: center;
-	font-size: 3vh;
-	margin-top: 2vh;
-	color: #fff;
-}
