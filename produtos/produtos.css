@@ -69,7 +69,7 @@ select {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 2vh;
   color: #333;
   cursor: pointer;
   width: 100%;
@@ -112,7 +112,6 @@ header > a:first-of-type {
 	margin-left: 11vh;
 }
 
-
 .logo {
 	width: 11vh;
 	height: auto;
@@ -147,7 +146,7 @@ header > a:first-of-type {
 	text-align: center;
 	padding: 2vh;
 	font-size: 2vh;
-	transition: border 0.3s ease, color 0.3s ease, border-radius 0.4s ease-in-out;
+	transition: border 0.3s ease-out, color 0.3s ease-out, border-radius 0.4s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .nav-container .nav-item:nth-child(2) a {
@@ -155,11 +154,12 @@ header > a:first-of-type {
 }
 
 .nav-item a:hover {
-	border-radius: 5vh;
+	border-radius: 1vh;
 	border: 1px solid rgba(0, 120, 212, 0.5);
 	color: #0078d4;
 	border-color: #0078d4;
   box-shadow: 0 0 9px rgba(0, 120, 212, 0.5);
+	transform: scale(1.05);
 }
 
 .nav-icones {
@@ -173,7 +173,7 @@ header > a:first-of-type {
 	max-width: 30px;
 	min-width: 10px;
 	padding: 2vh;
-	transition: border 0.3s ease, color 0.3s ease, border-radius 0.4s ease-in-out;
+	transition: border 0.3s ease-out, color 0.3s ease-out, border-radius 0.4s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .nav-icones img:hover{
@@ -182,6 +182,7 @@ header > a:first-of-type {
 	color: #0078d4;
 	border-color: #0078d4;
   box-shadow: 0 0 9px rgba(0, 120, 212, 0.5);
+	transform: scale(1.05);
 }
 /* padrão header*/
 
@@ -228,14 +229,41 @@ section {
 .item {
 	display: flex;
 	flex-direction: column;
-	height: fit-content;
+	height: 75vh;
+	justify-content: start;
 	padding: 1.5vh;
 	flex: 1;
+	box-sizing: border-box;
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.02); 
+}
+
+.item:hover img {
+  transform: scale(1.0.2);
+}
+
+.item:hover h3 {
+  transform: scale(1.02);
+  color: #0078d4; 
+}
+
+.item:hover p {
+  transform: scale(1.02);
+}
+
+.item:hover a {
+  transform: scale(1.02);
+  color: #0078d4;
+  text-decoration: underline; 
 }
 
 .item img{
 	width: 100%;
-	height: 45vh;
+	height: 21vw;
 	object-fit: cover;
 	border-radius: 8px;
 	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
@@ -243,11 +271,19 @@ section {
 	-webkit-user-drag: none;
 }
 
+.item img,
+.item h3,
+.item p,
+.item a{
+	transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
 .item h3{
 	padding: 1vh;
 	font-size: 3vh;
 	text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
+
 
 .item p{
 	text-align: left;
@@ -264,8 +300,5 @@ section {
 	font-style: none;
 	padding: 1vh;
 	font-size: 2.2vh;
-}
-
-.item a:hover{
-	text-decoration: underline;
+	text-align: left;
 }

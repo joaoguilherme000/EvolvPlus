@@ -74,7 +74,7 @@ select {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 2vh;
   color: #333;
   cursor: pointer;
   width: 100%;
@@ -150,7 +150,7 @@ header > a:first-of-type {
 	text-align: center;
 	padding: 2vh;
 	font-size: 2vh;
-	transition: border 0.3s ease, color 0.3s ease, border-radius 0.4s ease-in-out;
+	transition: border 0.3s ease-out, color 0.3s ease-out, border-radius 0.4s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .nav-container .nav-item:first-child a {
@@ -158,11 +158,12 @@ header > a:first-of-type {
 }
 
 .nav-item a:hover {
-	border-radius: 5vh;
+	border-radius: 1vh;
 	border: 1px solid rgba(0, 120, 212, 0.5);
 	color: #0078d4;
 	border-color: #0078d4;
   box-shadow: 0 0 9px rgba(0, 120, 212, 0.5);
+	transform: scale(1.05);
 }
 
 .nav-icones {
@@ -176,7 +177,7 @@ header > a:first-of-type {
 	max-width: 30px;
 	min-width: 10px;
 	padding: 2vh;
-	transition: border 0.3s ease, color 0.3s ease, border-radius 0.4s ease-in-out;
+	transition: border 0.3s ease-out, color 0.3s ease-out, border-radius 0.4s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .nav-icones img:hover{
@@ -185,6 +186,7 @@ header > a:first-of-type {
 	color: #0078d4;
 	border-color: #0078d4;
   box-shadow: 0 0 9px rgba(0, 120, 212, 0.5);
+	transform: scale(1.05);
 }
 
 .slideshow-container {
@@ -290,13 +292,15 @@ header > a:first-of-type {
 	}
 }
 
+@keyframes fadeInUp {to {opacity: 1;transform: translateY(0);}}
+
 .valores {
   display: flex;
   height: 18vh;
   padding: 2vh;
 	padding-top: 4vh;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-evenly; 
 }
 
 .valor-item {
@@ -309,6 +313,8 @@ header > a:first-of-type {
 	height: auto;
 	width: auto;
 	cursor: pointer;
+	transform: scale(1);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border 0.3s ease-out, border-radius 2s ease-out;
 }
 
 .valor-item:hover {
@@ -316,7 +322,8 @@ header > a:first-of-type {
 	border: 1px solid rgba(0, 120, 212, 0.5);
 	color: #0078d4;
 	border-color: #0078d4;
-  box-shadow: 0 0 9px rgba(0, 120, 212, 0.5);
+	transform: scale(1.05);
+	box-shadow: 0 0 15px rgba(0, 120, 212, 0.5);
 }
 
 .image-container {

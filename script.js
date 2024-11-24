@@ -28,7 +28,7 @@ function autoSlide() {
     }
 }
 
-const autoSlideInterval = setInterval(autoSlide, 13000); // 5 segundos porque sim
+const autoSlideInterval = setInterval(autoSlide, 4000); // 5 segundos porque sim
 
 let startX = 0;
 let isDragging = false;
