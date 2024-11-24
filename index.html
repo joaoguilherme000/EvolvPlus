@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+    <defs>
+      <!-- Filtro para Deuteranopia -->
+      <filter id="deuteranopia">
+        <feColorMatrix type="matrix" values="0.625 0.375 0 0 0 0.7 0.3 0 0 0 0 0.3 0.7 0 0 0 0 0 1 0"/>
+      </filter>
+      <!-- Filtro para Protanopia -->
+      <filter id="protanopia">
+        <feColorMatrix type="matrix" values="0.567 0.433 0 0 0 0.558 0.442 0 0 0 0 0.242 0.758 0 0 0 0 0 1 0"/>
+      </filter>
+      <!-- Filtro para Tritanopia -->
+      <filter id="tritanopia">
+        <feColorMatrix type="matrix" values="0.95 0.05 0 0 0 0 0.433 0.567 0 0 0 0.475 0.525 0 0 0 0 0 1 0"/>
+      </filter>
+    </defs>
+  </svg>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Peta:wght@100..900&display=swap" rel="stylesheet">
+  <title>Evolv Plus</title>
+</head>
+<body>
+  <header class="lexend-deca-fonte">
+
+    <a href="index.html">
+      <img src="imagens/logo.png" alt="logo" class="logo" aria-label="Voltando ao Início">
+    </a>
+
+    <div id="content">
+      <h1>Bem-vindo ao nosso site</h1>
+      <p>Esta é uma plataforma acessível para todos os usuários.</p>
+    </div>
+    
+    <ul class="nav-container">
+      <li class="nav-item"><a href="#index.html">INICIO</a></li>
+      <li class="nav-item"><a href="#Produtos">PRODUTOS</a></li>
+      <li class="nav-item"><a href="sobre/sobre.html">SOBRE</a></li>
+      <li class="nav-item"><a href="#Quiz">QUIZ</a></li>
+      <li class="nav-icones">
+        <img src="imagens/visao.png" alt="Selecionar" id="visao-icon" aria-label="Selecionar">
+      </li>
+      <div class="color-blindness-selector">
+        <select id="colorBlindness" aria-label="Escolha o tipo de visão">
+          <option value="normal">Normal</option>
+          <option value="deuteranopia">Deuteranopia</option>
+          <option value="protanopia">Protanopia</option>
+          <option value="tritanopia">Tritanopia</option>
+          <option value="sem-visao">Sem visão</option>
+        </select>
+      </div>
+      <li class="nav-icones"><img src="imagens/lupa.png" alt="Pesquisar" aria-label="Pesquisar"></li>
+      <li class="nav-icones"><img src="imagens/carrinho.png" alt="Carrinho de compras" aria-label="Carrinho de compras"></li>
+      <li class="nav-icones"><img src="imagens/usuario.png" alt="Seu Perfil" aria-label="Seu Perfil"></li>
+    </ul>
+
+  </header>
+
+  <section>
+    <div class="slideshow-container">
+      <div class="slides-wrapper">
+        <div class="slide" aria-label="">
+          <div class="loading-spinner"></div>
+          <img src="imagens/foto3.jpg" alt="Imagem 1" class="lazy-load">
+          <div class="titulo lexend-peta-fonte">CONSTRUINDO UM MUNDO INCLUSIVO</div>
+          <div class="texto lexend-deca-fonte">
+            Soluções únicas que se adaptam às suas
+            necessidades, proporcionando conforto,
+            inovação e praticidade em cada detalhe.
+          </div>
+        </div>
+        <div class="slide" aria-label="">
+          <div class="loading-spinner"></div>
+          <img src="imagens/foto.jpg" alt="Imagem 2" class="lazy-load">
+          <div class="titulo lexend-peta-fonte">FIQUE CONECTADO</div>
+          <div class="texto lexend-deca-fonte">
+            Garanta segurança e acessibilidade 
+            através dos nossos produtos, ficando 
+            despreocupado e sem sair de casa
+          </div>
+        </div>
+        <div class="slide" aria-label="">
+          <div class="loading-spinner"></div>
+          <img src="imagens/foto2.jpg" alt="Imagem 3" class="lazy-load">
+          <div class="titulo lexend-peta-fonte">NOSSOS PRODUTOS</div>
+          <div class="texto lexend-deca-fonte">
+            Soluções únicas que se adaptam às suas
+            necessidades, proporcionando conforto,
+            inovação e praticidade em cada detalhe.
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+    <div class="valores lexend-deca-fonte">
+      <div class="valor-item" aria-label="Temos uma loja fisica">
+        <div class="image-container" aria-label="Temos uma loja fisica">
+          <img src="imagens/loja.png" aria-label="Temos uma loja fisica">
+        </div>
+        <h4>Loja fisica</h4>
+      </div>
+      <div class="valor-item" aria-label="Usamos Inteligência Artificial nos nossos produtos">
+        <div class="image-container" aria-label="Usamos Inteligência Artificial nos nossos produtos">
+          <img src="imagens/robo.png" aria-label="Usamos Inteligência Artificial nos nossos produtos">
+        </div>
+        <h4>inteligência Artificial</h4>
+      </div>
+      <div class="valor-item" aria-label="Valorisamos a inlcusão e respeito">
+        <div class="image-container" aria-label="Valorisamos a inlcusão e respeito">
+          <img src="imagens/coracao.png" aria-label="Valorisamos a inlcusão e respeito">
+        </div>
+        <h4>Dedicação e Respeito</h4>
+      </div>
+      <div class="valor-item" aria-label="compartilhar sua Experiência conosco pode transformar o mundo">
+        <div class="image-container" aria-label="compartilhar sua Experiência conosco pode transformar o mundo">
+          <img src="imagens/compartilhar.png" aria-label="compartilhar sua Experiência conosco pode transformar o mundo">
+        </div>
+        <h4>Compartilhando Experiências</h4>
+      </div>
+    </div>
+  </section>
+<script src="script.js"></script>
+</body>
+</html>
