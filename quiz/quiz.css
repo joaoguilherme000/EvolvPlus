@@ -146,19 +146,20 @@ header > a:first-of-type {
 	text-align: center;
 	padding: 2vh;
 	font-size: 2vh;
-	transition: border 0.3s ease, color 0.3s ease, border-radius 0.4s ease-in-out;
+	transition: border 0.3s ease-out, color 0.3s ease-out, border-radius 0.4s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
-.nav-container .nav-item:first-child a {
+.nav-container .nav-item:nth-child(4) a {
   color: #0078d4;
 }
 
 .nav-item a:hover {
-	border-radius: 5vh;
+	border-radius: 1vh;
 	border: 1px solid rgba(0, 120, 212, 0.5);
 	color: #0078d4;
 	border-color: #0078d4;
   box-shadow: 0 0 9px rgba(0, 120, 212, 0.5);
+	transform: scale(1.05);
 }
 
 .nav-icones {
@@ -172,7 +173,7 @@ header > a:first-of-type {
 	max-width: 30px;
 	min-width: 10px;
 	padding: 2vh;
-	transition: border 0.3s ease, color 0.3s ease, border-radius 0.4s ease-in-out;
+	transition: border 0.3s ease-out, color 0.3s ease-out, border-radius 0.4s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .nav-icones img:hover{
@@ -181,5 +182,6 @@ header > a:first-of-type {
 	color: #0078d4;
 	border-color: #0078d4;
   box-shadow: 0 0 9px rgba(0, 120, 212, 0.5);
+	transform: scale(1.05);
 }
 /* padrão header*/

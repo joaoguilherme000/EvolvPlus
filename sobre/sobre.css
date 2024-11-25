@@ -197,6 +197,7 @@ header > a:first-of-type {
 
 section {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	height: 89vh;
 	width: auto;

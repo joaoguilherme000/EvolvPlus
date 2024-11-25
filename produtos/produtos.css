@@ -215,6 +215,7 @@ header > a:first-of-type {
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 3rem;
+	font-weight: bold;
   text-align: center;
 }
 
@@ -236,6 +237,7 @@ section {
 	box-sizing: border-box;
 	overflow: hidden;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	cursor: pointer;
 }
 
 .item:hover {
@@ -269,6 +271,7 @@ section {
 	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
 	user-select: none;
 	-webkit-user-drag: none;
+	cursor: pointer;
 }
 
 .item img,
