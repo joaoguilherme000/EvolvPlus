@@ -24,6 +24,21 @@
 	padding: 1vh;
 }
 
+.side-sheet a {
+	align-self: center;
+	color: black;
+	text-decoration: none;
+	text-align: left;
+	padding: 2vh;
+	font-size: 2vh;
+	transition: border 0.3s ease-out,
+	color 0.3s ease-out,
+	border-radius 0.4s ease-out,
+	transform 0.3s ease-out,
+	box-shadow 0.3s ease-out,
+	padding 0.3s ease-out;
+}
+
 .side-links {
   list-style: none;
   padding: 2vh;
@@ -32,6 +47,10 @@
 
 .side-links li {
 	display: flex;
+}
+
+.side-links li:active {
+	background-color: none;
 }
 
 .side-links li a {

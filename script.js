@@ -28,7 +28,7 @@ function autoSlide() {
     }
 }
 
-const autoSlideInterval = setInterval(autoSlide, 4000); // 5 segundos porque sim
+const autoSlideInterval = setInterval(autoSlide, 4000); // 4 segundos porque sim
 
 let startX = 0;
 let isDragging = false;
@@ -46,7 +46,7 @@ slidesWrapper.addEventListener('mousemove', (e) => { // só apartir do clique e 
     currentTranslate = -currentIndex * 100 + (diff / window.innerWidth) * 100;
     slidesWrapper.style.transform = `translateX(${currentTranslate}%)`;
     // o numero inteiro pode dar erro caso clique e segure pra sempre no ultimo
-    // depois ele se corrige porque a posição do mouse e imagem ficam juntas
+
 });
 
 slidesWrapper.addEventListener('mouseup', (e) => { // aqui ele sai do clique
@@ -68,7 +68,7 @@ slidesWrapper.addEventListener('mouseleave', () => {
 });
 
 slidesWrapper.addEventListener('dragstart', (event) => {
-    event.preventDefault(); // evita de pegar a imagem quando
+    event.preventDefault(); // evita de pegar a imagem
 });
 
 // toque para celular coloquei porque a maioria vai usar
@@ -121,6 +121,7 @@ function readFullSlide(event) {
   window.speechSynthesis.speak(msg);
 }
   
+// fica aqui em baixo porque ta dando erra se for la em cima
 document.querySelectorAll('.slide').forEach(slide => {
   slide.addEventListener('click', readFullSlide);
 });

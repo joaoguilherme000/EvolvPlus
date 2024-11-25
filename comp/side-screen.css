@@ -28,6 +28,15 @@
 		display: none;
 	}
 
+	.side-sheet a:hover {
+		border-radius: 4vh;
+		border: 1px solid rgba(0, 120, 212, 0.5);
+		color: #0078d4;
+		border-color: #0078d4;
+		box-shadow: 0 0 9px rgba(0, 120, 212, 0.5);
+		transform: scale(1.05);
+	}
+
 	.side-sheet {
 		display: flex;
 		flex-direction: column;
@@ -48,6 +57,11 @@
 	.side-images img{
 		transform: scale(2.5);
 	}
+
+	.nav-icones img:hover{
+		transform: scale(2.05);
+	}
+	
 }
 
 /* TELAS*/
