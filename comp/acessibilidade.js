@@ -61,3 +61,16 @@ document.querySelectorAll('button, a, select, [aria-label], .valor-item').forEac
     element.addEventListener('click', readTextOnClick);
   }
 });
+
+document.addEventListener('keydown', (event) => {
+  const focusedElement = document.activeElement; // Elemento atualmente em foco
+
+  // Verifica se a tecla pressionada é "Enter"
+  if (event.key === 'Enter') {
+    // Se o elemento focado for clicável, dispare o evento de clique
+    if (focusedElement && typeof focusedElement.click === 'function') {
+      event.preventDefault(); // Impede o comportamento padrão do Enter (se houver)
+      focusedElement.click();
+    }
+  }
+});
