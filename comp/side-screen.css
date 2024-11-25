@@ -1,0 +1,53 @@
+/* TELAS*/
+@media only screen and (max-width: 800px) {
+	header > a:first-of-type {
+		margin-left: 5vh;
+	}
+
+  .nav-icones img{
+		width: 3vw;
+		padding: 1vh;
+	}
+}
+
+@media only screen and (max-width: 712px) {
+	.nav-item a {
+		padding: 1vh;
+	}
+}
+
+@media only screen and (max-width: 645px) {
+	.nav-item a {
+		padding: 0vh;
+	}
+}
+
+@media only screen and (max-width: 590px) {
+
+	.nav-container {
+		display: none;
+	}
+
+	.side-sheet {
+		display: flex;
+		flex-direction: column;
+	}
+
+  .menu-button {
+    display: inline-block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+	.menu-button img{
+    width: 5vh;
+		padding: 2vh;
+  }
+
+	.side-images img{
+		transform: scale(2.5);
+	}
+}
+
+/* TELAS*/
