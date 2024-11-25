@@ -28,7 +28,13 @@
 <body>
   <header class="lexend-deca-fonte">
 
-    <a href="../index.html"><img src="../imagens/logo.png" alt="logo" class="logo" aria-label="Voltando ao Início"></a>
+    <a href="../index.html">
+      <img src="../imagens/logo.png" alt="logo" class="logo" aria-label="Voltando ao Início">
+    </a>
+
+    <button class="menu-button" aria-label="Abrir menu" id="menuButton">
+      <img src="../imagens/menu.png" alt="Menu">
+    </button>
 
     <ul class="nav-container">
       <li class="nav-item"><a href="../index.html">INÍCIO</a></li>
@@ -47,6 +53,30 @@
       <li class="nav-icones"><img src="../imagens/usuario.png" alt="Seu Perfil" aria-label="Seu Perfil"></li>
     </ul>
 
+    <div class="side-sheet" id="sideSheet">
+      <button class="close-button" id="closeButton" aria-label="Fechar menu">X</button>
+      <ul class="side-links">
+        <li><a href="../index.html">INICIO</a></li>
+        <li><a href="../produtos/index.html">PRODUTOS</a></li>
+        <li><a href="index.html">SOBRE</a></li>
+        <li><a href="../quiz/index.html">QUIZ</a></li>
+        <li>
+        <select class="lexend-deca-fonte" id="sideColorBlindness" aria-label="Escolha o tipo de visão">
+          <option value="Padrão">PADRÃO</option>
+          <option value="deuteranopia">Deuteranopia</option>
+          <option value="protanopia">Protanopia</option>
+          <option value="tritanopia">Tritanopia</option>
+          <option value="sem-visao">Sem visão</option>
+        </select>
+        </li>
+        <div class="side-images">
+          <li class="nav-icones"><img src="../imagens/lupa.png" alt="Pesquisar" aria-label="Pesquisar"></li>
+          <li class="nav-icones"><img src="../imagens/carrinho.png" alt="Carrinho de compras" aria-label="Carrinho de compras"></li>
+          <li class="nav-icones"><img src="../imagens/usuario.png" alt="Seu Perfil" aria-label="Seu Perfil"></li>
+        </div>
+      </ul>
+    </div>
+
   </header>
 
   <section class="lexend-deca-fonte">
@@ -61,6 +91,7 @@
     </p>
   </section>
 
-<script src="sobre.js"></script>
+<script src="../acessibilidade.js"></script>
+<script src="../side-sheet.js"></script>
 </body>
 </html>

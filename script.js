@@ -93,61 +93,6 @@ slidesWrapper.addEventListener('touchend', (e) => {
     updateSlidePosition();
 });
 
-// daltonismo e fala
-
-// Usar isso
-let speechQueue = null;
-
-document.addEventListener('DOMContentLoaded', function() {
-  const colorBlindnessSelect = document.getElementById('colorBlindness');
-
-  colorBlindnessSelect.addEventListener('change', function() {
-    const selectedFilter = colorBlindnessSelect.value;
-    document.body.className = ''; 
-    if (selectedFilter !== 'normal') {
-      document.body.classList.add(selectedFilter);
-    }
-
-    if (selectedFilter !== 'normal') {
-      const msg = new SpeechSynthesisUtterance(`Você selecionou o filtro ${selectedFilter}`);
-      msg.onend = function () {
-        speechQueue = null;
-      };
-      speechQueue = msg;
-      window.speechSynthesis.speak(msg);
-    }
-  });
-});
-
-function readTextOnClick(event) {
-  if (speechQueue) {
-    window.speechSynthesis.cancel();
-  }
-
-  let textToRead = event.target.innerText || event.target.getAttribute('aria-label') || event.target.getAttribute('alt');
-
-  const msg = new SpeechSynthesisUtterance(textToRead);
-
-  // Define o que acontece quando a fala termina
-  msg.onend = function () {
-    speechQueue = null;
-  };
-
-  // não pode ser null
-  speechQueue = textToRead;
-
-  // Inicia a fala
-  window.speechSynthesis.speak(msg);
-}
-
-// cursor pointer pra não ler contéudo invisivel
-document.querySelectorAll('button, a, select, [aria-label], .valor-item').forEach(element => {
-  const style = window.getComputedStyle(element);
-  if (style.cursor === 'pointer') {
-    element.addEventListener('click', readTextOnClick);
-  }
-});
-
 function readFullSlide(event) {
   // se ta falando ele para
   if (speechQueue) {

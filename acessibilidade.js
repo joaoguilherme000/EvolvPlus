@@ -1,20 +1,18 @@
-// daltonismo e fala
+// acessibilidade
 
-// Usar isso pra parar de falar
+// Usar isso
 let speechQueue = null;
 
-// Um listener pra ficar trocando
 document.addEventListener('DOMContentLoaded', function() {
   const colorBlindnessSelect = document.getElementById('colorBlindness');
+  const sideColorBlindnessSelect = document.getElementById('sideColorBlindness');
 
-  colorBlindnessSelect.addEventListener('change', function() {
-    const selectedFilter = colorBlindnessSelect.value;
-    document.body.className = ''; // Remove todas as classes ou era pra remover
+  function applyColorBlindnessFilter(selectedFilter) {
+    document.body.className = ''; // Remove todas as classes existentes
     if (selectedFilter !== 'normal') {
-      document.body.classList.add(selectedFilter);
+      document.body.classList.add(selectedFilter); // Adiciona a nova classe
     }
 
-    // 
     if (selectedFilter !== 'normal') {
       const msg = new SpeechSynthesisUtterance(`Você selecionou o filtro ${selectedFilter}`);
       msg.onend = function () {
@@ -23,41 +21,40 @@ document.addEventListener('DOMContentLoaded', function() {
       speechQueue = msg;
       window.speechSynthesis.speak(msg);
     }
+  }
+
+  // Adiciona os event listeners
+  colorBlindnessSelect.addEventListener('change', function() {
+    applyColorBlindnessFilter(colorBlindnessSelect.value);
+  });
+
+  sideColorBlindnessSelect.addEventListener('change', function() {
+    applyColorBlindnessFilter(sideColorBlindnessSelect.value);
   });
 });
 
-// menu aparece
-document.getElementById('visao-icon').addEventListener('click', function() {
-  const colorBlindnessSelector = document.querySelector('.color-blindness-selector');
-  colorBlindnessSelector.classList.toggle('visible');
-});
-
-// Função para ler o texto clicado
 function readTextOnClick(event) {
-  // faz calar a boca
   if (speechQueue) {
     window.speechSynthesis.cancel();
   }
 
-  //ler o aria-label
-  
   let textToRead = event.target.innerText || event.target.getAttribute('aria-label') || event.target.getAttribute('alt');
 
-  // Faz um objeto com o texto que tem que ler
   const msg = new SpeechSynthesisUtterance(textToRead);
 
-  // Só para de falar quando for null
+  // Define o que acontece quando a fala termina
   msg.onend = function () {
     speechQueue = null;
   };
 
-  // a fala recebe o texto clicado aria-label
+  // não pode ser null
   speechQueue = textToRead;
 
-  // começa a falar
+  // Inicia a fala
   window.speechSynthesis.speak(msg);
 }
 
+// cursor pointer pra não ler contéudo invisivel
 document.querySelectorAll('button, a, select, [aria-label], .valor-item').forEach(element => {
   const style = window.getComputedStyle(element);
   if (style.cursor === 'pointer') {
