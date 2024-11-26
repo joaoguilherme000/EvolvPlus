@@ -81,7 +81,7 @@ header > a:first-of-type {
 
 .nav-icones img{
 	width: 5vw;
-	height: auto; 
+	height: 5vh; 
 	max-width: 30px;
 	min-width: 10px;
 	padding: 2vh;
@@ -101,3 +101,19 @@ header > a:first-of-type {
 	transform: scale(1.05);
 }
 /* padrão header*/
+
+@media only screen and (max-height: 500px) {
+	.nav-item a {
+		font-size: 3vh;
+	}
+
+	select {
+		font-size: 3vh;
+	}
+}
+
+@media only screen and (max-height: 330px) {
+	.nav-item a {
+		font-size: 3vh;
+	}
+}

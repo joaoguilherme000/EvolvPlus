@@ -52,6 +52,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 /* fim dele */
 
 select {
@@ -61,7 +62,7 @@ select {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px;
+  padding: 1.3vh;
   font-size: 2vh;
   color: #333;
   cursor: pointer;
