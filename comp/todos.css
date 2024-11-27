@@ -81,8 +81,10 @@ select:hover {
   box-shadow: 0 0 5px rgba(0, 120, 212, 0.5);
 }
 
-body {
+html, body {
 	transition: filter 0.3s ease-in-out;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 body.deuteranopia {

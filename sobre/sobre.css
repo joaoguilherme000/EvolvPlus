@@ -4,50 +4,211 @@
 
 /* pagina */
 
-
 .nav-container .nav-item:nth-child(3) a {
   color: #0078d4;
 }
 
 section {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 89vh;
-	width: auto;
+	height: auto;
 	padding: 3vh;
-	flex-direction: column;
-	overflow: auto;
-	box-sizing: border-box;
-	background: linear-gradient(90deg, #041c4d, #3b616f, #041c4d, #3b616f);
-	background-size: 300% 100%;
-	animation: gradientAnimation 3s linear infinite;
+	background: url("../imagens/fundo.jpg");
+	background-size: 100% 100%;
 }
-
-@keyframes gradientAnimation {
-	0% {
-			background-position: 0% 50%;
-	}
-	100% {
-			background-position: 100% 50%;
-	}
-}
-
 
 h2 {
-	align-self: center;
-	text-align: center;
 	font-size: 7vh;
 	padding: 3vh;
-	margin-top: 2vh;
 	color: #000;
+	flex: 0.1;
 	cursor: pointer;
+	transition: font-size 0.3s ease,
+	padding 0.3s ease;
 }
 
 p {
 	cursor: pointer;
-	text-align: justify;
+	text-align: left;
 	font-size: 3vh;
 	margin-top: 2vh;
-	color: #fff;
+	flex: 0.3;
+	padding: 1vh;
+	color: #000000;
+	transition: font-size 0.3s ease,
+	padding 0.3s ease;
+}
+
+@media only screen and (min-width: 1055px) {
+	body {
+		overflow: hidden;
+	}
+	
+	section {
+		overflow: hidden;
+		height: 89vh;
+	}
+}
+
+@media only screen and (max-width: 1030px) {
+	h2 {
+		font-size: 6.9vh;
+	}
+
+	p {
+		font-size: 2.9vh;
+	}
+}
+
+@media only screen and (max-width: 999px) {
+	h2 {
+		font-size: 6.8vh;
+	}
+
+	p {
+		font-size: 2.85vh;
+	}
+}
+
+@media only screen and (max-width: 860px) {
+	h2 {
+		padding: 2vh;
+		font-size: 6.7vh;
+	}
+
+	p {
+		font-size: 2.80vh;
+	}
+}
+
+@media only screen and (max-width: 845px) {
+	h2 {
+		font-size: 6.6vh;
+	}
+
+	p {
+		font-size: 2.77vh;
+	}
+}
+
+@media only screen and (max-width: 830px) {
+	h2 {
+		font-size: 6.5vh;
+	}
+
+	p {
+		font-size: 2.75vh;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	h2 {
+		font-size: 6.5vh;
+	}
+
+	p {
+		font-size: 2.65vh;
+	}
+}
+
+@media only screen and (max-width: 730px) {
+	h2 {
+		padding: 1.5vh;
+		font-size: 6.3vh;
+	}
+
+	p {
+		font-size: 2.58vh;
+	}
+}
+
+@media only screen and (max-width: 670px) {
+	section {
+		background: url("../imagens/fundo phone.jpg");
+		background-size: 100% 100%;
+	}
+
+	p {
+		color: #fff;
+		border: #000 solid 2px;
+		background-color: rgba(000, 000, 000, 0.5);
+	}
+}
+
+@media only screen and (max-width: 645px) {
+	h2 {
+		padding: 1.3vh;
+		font-size: 6.1vh;
+	}
+
+	p {
+		font-size: 2.52vh;
+	}
+}
+
+@media only screen and (max-width: 620px) {
+	h2 {
+		padding: 1.2vh;
+		font-size: 6.0vh;
+	}
+
+	p {
+		font-size: 2.41vh;
+	}
+}
+
+@media only screen and (max-width: 610px) {
+	h2 {
+		padding: 1.1vh;
+		font-size: 5.8vh;
+	}
+
+	p {
+		font-size: 2.40vh;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	p {
+		font-size: 2.35vh;
+	}
+}
+
+@media only screen and (max-width: 545px) {
+	h2 {
+		padding: 1.0vh;
+		font-size: 5.7vh;
+	}
+
+	p {
+		font-size: 2.30vh;
+	}
+}
+
+@media only screen and (max-width: 525px) {
+	h2 {
+		font-size: 5.5vh;
+	}
+
+	p {
+		font-size: 2.24vh;
+	}
+}
+
+@media only screen and (max-width: 485px) {
+	h2 {
+		font-size: 6vw;
+	}
+
+	p {
+		font-size: 3.8vw;
+	}
+}
+
+@media only screen and (max-width: 445px) {
+	h2 {
+		font-size: 6vw;
+	}
+
+	p {
+		font-size: 3.8vw;
+	}
 }
