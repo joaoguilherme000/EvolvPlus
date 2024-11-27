@@ -1,4 +1,5 @@
 /* TELAS*/
+
 @media only screen and (max-width: 800px) {
 	header > a:first-of-type {
 		margin-left: 5vh;
@@ -35,11 +36,6 @@
 		border-color: #0078d4;
 		box-shadow: 0 0 9px rgba(0, 120, 212, 0.5);
 		transform: scale(1.05);
-	}
-
-	.side-sheet {
-		display: flex;
-		flex-direction: column;
 	}
 
   .menu-button {

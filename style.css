@@ -152,9 +152,9 @@ section {
   display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 2vh;
-  padding: 1vh;
+	height: 19.5vh;
 	min-height: fit-content;
-	padding-top: 4vh;
+	padding-top: 3vh;
 }
 
 .valor-item {
@@ -164,8 +164,8 @@ section {
   align-items: center;
 	height: fit-content;
 	cursor: pointer;
-	transform: scale(1);
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border 0.3s ease-out, border-radius 2s ease-out;
+	padding: 2vh;
+	transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border 0.3s ease-out, border-radius 2s ease-out;
 }
 
 .valor-item:hover {
@@ -173,7 +173,7 @@ section {
 	border: 1px solid rgba(0, 120, 212, 0.5);
 	color: #0078d4;
 	border-color: #0078d4;
-	transform: scale(1.05);
+	transform: scale(1.02);
 	box-shadow: 0 0 15px rgba(0, 120, 212, 0.5);
 }
 
@@ -191,6 +191,9 @@ section {
 .valor-item img {
 	width: 80%;
 	height: 90%;
+	user-select: none;
+	-webkit-user-drag: none;
+	box-sizing: border-box;
 }
 
 .valor-item h4 {
