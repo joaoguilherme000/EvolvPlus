@@ -39,15 +39,14 @@
 	}
 
   .menu-button {
-    display: inline-block;
+    display: flex;
     background: none;
     border: none;
     cursor: pointer;
   }
 
 	.menu-button img{
-    width: 5vh;
-		padding: 2vh;
+    width: 7vw;
   }
 
 	.side-images img{
