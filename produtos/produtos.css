@@ -195,19 +195,19 @@ section {
 	}
 }
 
-@media only screen and (min-height: 650px) and (max-width: 700px){
+@media only screen and (min-height: 651px) and (max-width: 700px){
 	.item img {
 		height: 28vh;
 	}
 }
 
-@media only screen and (min-height: 650px) and (max-width: 550px){
+@media only screen and (min-height: 651px) and (max-width: 700px){
 	.item img {
-		height: 23vh;
+		height: 28vh;
 	}
 }
 
-@media only screen and (min-height: 650px) and (max-width: 550px){
+@media only screen and (min-height: 651px) and (max-width: 550px){
 	.item img {
 		height: 45vh;
 	}
