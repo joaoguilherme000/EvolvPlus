@@ -94,7 +94,10 @@ slidesWrapper.addEventListener('touchend', (e) => {
 });
 
 function readFullSlide(event) {
-  // se ta falando ele para
+  if (!isSpeechEnabled) {
+    return; // Não faz nada se a fala estiver desativada
+  }
+
   if (speechQueue) {
     window.speechSynthesis.cancel();
   }

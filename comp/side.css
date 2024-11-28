@@ -49,10 +49,6 @@
 	display: flex;
 }
 
-.side-links li:active {
-	background-color: none;
-}
-
 .side-links li a {
 	font-size: 2.4vh;
 	padding: 2vh;
@@ -88,7 +84,7 @@
 	justify-content: space-around;
 	align-items: center;
 	margin-top: 4vh;
-	cursor: pointer; 
+	cursor: pointer;
 }
 
 .side-links img:active{

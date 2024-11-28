@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sideSheet.style.right = '-100%';
 
     setTimeout(() => {
-      sideSheet.style.display = 'none'; // Oculta após a transição
+      sideSheet.style.display = 'none'; // Oculta pra não ficar bugado
     }, 500);
   });
 });

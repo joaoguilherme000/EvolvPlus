@@ -6,6 +6,7 @@ header {
 	justify-content: space-between;
 	align-content: center;
 	padding-right: 2vh;
+	padding-top: 0.2vh;
 }
 
 header > a:first-of-type {
@@ -85,7 +86,7 @@ header > a:first-of-type {
 
 .nav-icones img{
 	width: 5vw;
-	height: 5vh; 
+	height: 4vh; 
 	max-width: 30px;
 	min-width: 10px;
 	padding: 2vh;
