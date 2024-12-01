@@ -1,10 +1,5 @@
-.side-sheet li:nth-child(3) a {
-	color: #0078d4;
-}
-
 /* pagina */
-
-.nav-container .nav-item:nth-child(3) a {
+.nav-container .nav-item:nth-child(3) a, .side-sheet li:nth-child(3) a {
   color: #0078d4;
 }
 

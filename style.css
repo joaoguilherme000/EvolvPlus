@@ -1,10 +1,5 @@
 /* como centralizar div google pesquisar */
-
-.side-sheet li:nth-child(1) a {
-	color: #0078d4;
-}
-
-.nav-container .nav-item:first-child a {
+.nav-container .nav-item:first-child a, .side-sheet li:nth-child(1) a {
   color: #0078d4;
 }
 
@@ -270,10 +265,6 @@ section {
 	.titulo {
 		font-size: 4.3vh;
 	}
-}
-
-@media only screen and (max-width: 368px) {
-	/* 1 item */
 }
 
 @media only screen and (max-width: 330px) {

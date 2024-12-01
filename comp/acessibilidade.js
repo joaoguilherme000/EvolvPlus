@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (selectedFilter !== 'normal') {
+      if (!isSpeechEnabled) {
+        return;
+      }
+
       const msg = new SpeechSynthesisUtterance(`Você selecionou o filtro ${selectedFilter}`);
       msg.onend = function () {
         speechQueue = null;
