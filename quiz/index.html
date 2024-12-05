@@ -113,37 +113,41 @@
 
   <section class="container lexend-deca-fonte">
     
-    <h1 class="titulo">QUIZ</h1>
+    <h1 class="titulo" id="campo">QUIZ</h1>
 
     <div class="esquerda">
-      <div class="pergunta">
-        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore expedita earum numquam unde fugiat.</h1>
+      <div class="pergunta" id="pergunta">
+        <h1>Carregando pergunta...</h1>
       </div>
       <div class="mascote">
         <img src="../imagens/mascote 2.png" alt="nosso mascote">
       </div>
     </div>
 
-    <div class="direita">
+    <div class="direita" id="alternativas">
       <div class="borda">
-        <h3 class="alternativa" id="a">
-          Lorem ipsum dolor sit amet consectetur
+        <h3 class="alternativa" id="0">
+          Alternativa 1
         </h3>
       </div>
       <div class="borda">
-        <h3 class="alternativa" id="b">
-          Lorem ipsum dolor sit amet consectetur
+        <h3 class="alternativa" id="1">
+          Alternativa 2
         </h3>
       </div>
       <div class="borda">
-        <h3 class="alternativa" id="c">
-          Lorem ipsum dolor sit amet consectetur
+        <h3 class="alternativa" id="2">
+          Alternativa 3
         </h3>
       </div>
       <div class="borda">
-        <h3 class="alternativa" id="d">
-          Lorem ipsum dolor sit amet consectetur
+        <h3 class="alternativa" id="3">
+          Alternativa 4
         </h3>
+      </div>
+      <div class="options">
+        <div class="button" id="voltar">Voltar</div>
+        <div class="button" id="proximo">Próxima</div>
       </div>
     </div>
 
@@ -153,5 +157,6 @@
   </script>
   <script src="../comp/acessibilidade.js"></script>
   <script src="../comp/side-sheet.js"></script>
+  <script src="./quiz.js"></script>
 </body>
 </html>

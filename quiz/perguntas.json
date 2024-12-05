@@ -1,0 +1,55 @@
+[
+  {
+    "pergunta": "Qual é o principal objetivo da Lei Brasileira de Inclusão (Lei nº 13.146/2015)?",
+    "alternativas": [
+      "Não sei",
+      "Proteger os direitos das pessoas com deficiência",
+      "Oferecer benefícios financeiros para todas as pessoas com deficiência",
+      "Construir rampas em espaços públicos"
+    ]
+  },
+  {
+    "pergunta": "Verdadeiro ou falso: Pessoas com deficiência não podem trabalhar em qualquer tipo de profissão",
+    "alternativas": [
+      "Verdadeiro, existem muitas limitações",
+      "Falso, elas podem trabalhar em várias áreas, se tiverem suporte e inclusão",
+      "Não sei, nunca vi alguém com deficiência no meu trabalho"
+    ]
+  },
+  {
+    "pergunta": "Quando você vê alguém com deficiência enfrentando uma dificuldade, o que você faz?",
+    "alternativas": [
+      "Ajudo imediatamente, sem perguntar",
+      "Pergunto se a pessoa quer ou precisa de ajuda",
+      "Fico sem saber o que fazer",
+      "Não faço nada, é melhor não incomodar"
+    ]
+  },
+  {
+    "pergunta": "Você sabe o que é capacitismo?",
+    "alternativas": [
+      "Algo sobre ginástica?",
+      "Discriminação contra pessoas com deficiência",
+      "Um superpoder",
+      "Não faço ideia, mas parece sério"
+    ]
+  },
+  {
+    "pergunta": "Como uma pessoa com deficiência visual navega na internet?",
+    "alternativas": [
+      "Não navega, infelizmente",
+      "Usando leitores de tela que 'falam' o conteúdo do site",
+      "Com a ajuda de alguém",
+      "Não faço ideia, mas fiquei curioso(a)"
+    ]
+  },
+  {
+    "pergunta": "Você sabe o que significa LIBRAS?",
+    "alternativas": [
+      "Um tipo de horóscopo?",
+      "A Língua Brasileira de Sinais",
+      "Um aplicativo de tradução",
+      "Algo sobre livros?"
+    ]
+  }
+]
