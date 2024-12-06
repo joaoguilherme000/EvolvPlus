@@ -18,7 +18,7 @@
   position: absolute;
   font-size: 6vh;
   text-align: center;
-  width: 90%;
+  width: 95%;
 }
 
 .esquerda {
@@ -47,7 +47,6 @@
   font-size: 5vh;
   text-align: left;
   text-decoration: underline;
-  text-transform: capitalize;
   transition: all 0.3s ease;
 }
 
@@ -70,11 +69,10 @@
   transition: all 0.3s ease;
 }
 
-.grafico-pizza {
-  width: 50%;
-  height: 50px;
+#stats {
+  margin-top: 20px;
+  text-align: center;
 }
-
 
 .direita {
   display: grid;

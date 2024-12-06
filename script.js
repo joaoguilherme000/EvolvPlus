@@ -123,8 +123,7 @@ function readFullSlide(event) {
 
   window.speechSynthesis.speak(msg);
 }
-  
-// fica aqui em baixo porque ta dando erra se for la em cima
+
 document.querySelectorAll('.slide').forEach(slide => {
   slide.addEventListener('click', readFullSlide);
 });

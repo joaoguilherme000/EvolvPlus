@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
-import { getFirestore, collection, addDoc, setDoc, doc } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
+import { getFirestore, collection, addDoc, setDoc, doc, query, where, getDocs, updateDoc } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDrZ6r44Dzr8S4lgp6n2VrEFqTFmgRN7CA",
@@ -16,11 +16,20 @@ export const db = getFirestore(app);
 
 window.onload = async () => {
   let userCode = localStorage.getItem("userCode");
+  const lastQuestionIndex = localStorage.getItem("lastQuestionIndex");
+
+  if (lastQuestionIndex !== null) {
+    indexPerguntaAtual = parseInt(lastQuestionIndex, 10);
+  } else {
+    indexPerguntaAtual = 0; // Começa na primeira pergunta se não houver índice salvo
+  }
+
+  mostraPergunta(indexPerguntaAtual);
 
   if (!userCode) {
     try {
       const docRef = await addDoc(collection(db, "Pessoas"), {
-        som: true,
+        timestamp: new Date(),
       });
       
       userCode = docRef.id;
@@ -33,31 +42,27 @@ window.onload = async () => {
   }
 };
 
-let selectedAlternative = document.querySelector(".alternativa.selected"); 
+let alternativaSelecionada = document.querySelector(".alternativa.selected"); 
 
-function checkSelection() {
-  return selectedAlternative !== null;
+function checkSelecionada() {
+  return alternativaSelecionada !== null;
 }
 
 document.querySelectorAll('.alternativa').forEach((alternativa, index) => {
   alternativa.addEventListener('click', () => {
-    // Remove a classe "selected" de todas as alternativas
     document.querySelectorAll('.alternativa').forEach(item => item.classList.remove('selected'));
 
-    // Marca a alternativa selecionada
     alternativa.classList.add('selected');
-    selectedAlternative = { id: index, texto: alternativa.textContent }; // Armazenar o id e texto da alternativa
+    alternativaSelecionada = { id: index, texto: alternativa.textContent }; // Armazenar o id e texto da alternativa
   });
 });
 
 document.getElementById("proximo").addEventListener("click", async () => {
-  // Verifica se o usuário escolheu uma alternativa antes de continuar
-  if (!checkSelection()) {
+  if (!checkSelecionada()) {
     alert("Por favor, selecione uma alternativa antes de continuar.");
-    return; // Impede a mudança de pergunta se nenhuma alternativa foi selecionada
+    return;
   }
 
-  // Enviar dados para o Firestore
   try {
     const userCode = localStorage.getItem("userCode");
 
@@ -66,27 +71,48 @@ document.getElementById("proximo").addEventListener("click", async () => {
       return;
     }
 
-    // Objeto para enviar ao Firestore
-    const resposta = {
-      alternativaId: selectedAlternative.id,
-      alternativaTexto: selectedAlternative.texto,
-      pergunta: questions[currentQuestionIndex],
-      timestamp: new Date(), // Timestamp no formato correto
-      userCode: userCode
-    };
+    const respostasRef = collection(db, "Respostas");
+    const q = query(
+      respostasRef,
+      where("userCode", "==", userCode),
+      where("pergunta", "==", perguntas[indexPerguntaAtual])
+    );
 
-    // Enviar resposta para o Firestore (adaptado para sua configuração de banco de dados)
-    await addDoc(collection(db, "respostas"), resposta);
-    console.log("Resposta enviada com sucesso");
+    const querySnapshot = await getDocs(q);
 
-    // Avançar para a próxima pergunta
-    if (currentQuestionIndex < questions.length - 1) {
-      currentQuestionIndex++;
-      displayQuestion(currentQuestionIndex);
-      selectedAlternative = null; // Resetar a resposta selecionada
+    if (!querySnapshot.empty) {
+      const docId = querySnapshot.docs[0].id;
+      const respostaDocRef = doc(respostasRef, docId);
+      await updateDoc(respostaDocRef, {
+        alternativaTexto: alternativaSelecionada.texto,
+        alternativaId: alternativaSelecionada.id,
+      });
+      console.log("Resposta atualizada com sucesso");
+    } else {
+      const resposta = {
+        alternativaTexto: alternativaSelecionada.texto,
+        alternativaId: alternativaSelecionada.id,
+        pergunta: perguntas[indexPerguntaAtual],
+        userCode: userCode,
+      };
+
+      await addDoc(respostasRef, resposta);
+      console.log("Resposta enviada com sucesso");
+    }
+
+    localStorage.setItem("lastQuestionIndex", indexPerguntaAtual);
+
+    if (indexPerguntaAtual < perguntas.length - 1) {
+      indexPerguntaAtual++; // Avança o índice corretamente
+
+      // Atualiza a pergunta exibida e só depois salva o índice no localStorage
+      mostraPergunta(indexPerguntaAtual);
+      localStorage.setItem("lastQuestionIndex", indexPerguntaAtual);
+
+      alternativaSelecionada = null; // Reseta a seleção para evitar problemas
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      alert("Você já está na última pergunta.");
+      alert("Você respondeu a todas as perguntas!");
     }
   } catch (e) {
     console.error("Erro ao enviar resposta: ", e);
