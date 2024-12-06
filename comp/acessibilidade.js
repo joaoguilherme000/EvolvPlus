@@ -7,18 +7,19 @@ let isSpeechEnabled = localStorage.getItem('isSpeechEnabled') === 'true';
 document.addEventListener('DOMContentLoaded', function() {
   const colorBlindnessSelect = document.getElementById('colorBlindness');
   const sideColorBlindnessSelect = document.getElementById('sideColorBlindness');
-  const savedFilter = localStorage.getItem('selectedColorBlindnessFilter') || 'normal';
+  const savedFilter = localStorage.getItem('selectedColorBlindnessFilter') || 'Padrão';
 
   colorBlindnessSelect.value = savedFilter;
+  sideColorBlindnessSelect.value = savedFilter;
   applyColorBlindnessFilter(savedFilter);
 
   function applyColorBlindnessFilter(selectedFilter) {
-    document.body.className = ''; // Remove todas as classes existentes
-    if (selectedFilter !== 'normal') {
-      document.body.classList.add(selectedFilter); // Adiciona a nova classe
+    document.body.className = '';
+    if (selectedFilter !== 'Padrão') {
+      document.body.classList.add(selectedFilter);
     }
 
-    if (selectedFilter !== 'normal') {
+    if (selectedFilter !== 'Padrão') {
       if (!isSpeechEnabled) {
         return;
       }
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
   colorBlindnessSelect.addEventListener('change', function() {
     const selectedFilter = colorBlindnessSelect.value;
     localStorage.setItem('selectedColorBlindnessFilter', selectedFilter);
-    sideColorBlindnessSelect.value = selectedFilter; // Sincroniza com outro <select>
+    sideColorBlindnessSelect.value = selectedFilter;
     applyColorBlindnessFilter(selectedFilter);
   });
 
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
   sideColorBlindnessSelect.addEventListener('change', function() {
     const selectedFilter = sideColorBlindnessSelect.value;
     localStorage.setItem('selectedColorBlindnessFilter', selectedFilter);
-    colorBlindnessSelect.value = selectedFilter; // Sincroniza com o <select> principal
+    colorBlindnessSelect.value = selectedFilter;
     applyColorBlindnessFilter(selectedFilter);
   });
   
@@ -98,24 +99,25 @@ function readTextOnClick(event) {
 
 // Nav container
 
-// Inicializa a interface com base no estado do som salvo
 if (isSpeechEnabled) {
-  document.querySelector("#soundIcon").style.display = "flex";
-  document.querySelector("#muteIcon").style.display = "none";
+  document.querySelector(".nav-container #muteIcon").style.display = "none";
+  document.querySelector("#soundIcon img").style.display = "flex";
+  document.querySelector(".side-images #muteIcon").style.display = "none";
+  document.querySelector(".side-images #soundIcon").style.display = "flex";
 } else {
-  document.querySelector("#soundIcon").style.display = "none";
-  document.querySelector("#muteIcon").style.display = "flex";
+  document.querySelector("#soundIcon img").style.display = "none";
+  document.querySelector(".nav-container #muteIcon").style.display = "flex";
+  document.querySelector(".side-images #soundIcon").style.display = "none";
+  document.querySelector(".side-images #muteIcon").style.display = "flex";
 }
 
 // Evento de ativar/desativar som
 document.querySelector("#soundIcon img").addEventListener("click", () => {
-  isSpeechEnabled = false; // Desativa a fala
-  window.speechSynthesis.cancel(); // Cancela qualquer fala em andamento
+  isSpeechEnabled = false;
+  window.speechSynthesis.cancel();
   
-  // Salva o estado no localStorage
   localStorage.setItem('isSpeechEnabled', 'false');
 
-  // Atualiza a interface
   document.querySelector(".side-images #soundIcon").style.display = "none";
   document.querySelector(".side-images #muteIcon").style.display = "flex";
   document.querySelector("#soundIcon img").style.display = "none";
@@ -123,27 +125,20 @@ document.querySelector("#soundIcon img").addEventListener("click", () => {
 });
 
 document.querySelector(".nav-container #muteIcon").addEventListener("click", () => {
-  isSpeechEnabled = true; // Ativa a fala
-  
-  // Salva o estado no localStorage
+  isSpeechEnabled = true;
   localStorage.setItem('isSpeechEnabled', 'true');
-
-  // Atualiza a interface
   document.querySelector(".side-images #muteIcon").style.display = "none";
   document.querySelector(".side-images #soundIcon").style.display = "flex";
   document.querySelector(".nav-container #muteIcon").style.display = "none";
   document.querySelector("#soundIcon img").style.display = "flex";
 });
 
-// Repete para o outro conjunto de ícones (side-images)
 document.querySelector(".side-images #soundIcon").addEventListener("click", () => {
-  isSpeechEnabled = false; // Desativa a fala
-  window.speechSynthesis.cancel(); // Cancela qualquer fala em andamento
-  
-  // Salva o estado no localStorage
+  isSpeechEnabled = false;
+  window.speechSynthesis.cancel();
+
   localStorage.setItem('isSpeechEnabled', 'false');
 
-  // Atualiza a interface
   document.querySelector("#soundIcon img").style.display = "none";
   document.querySelector(".nav-container #muteIcon").style.display = "flex";
   document.querySelector(".side-images #soundIcon").style.display = "none";
@@ -151,9 +146,8 @@ document.querySelector(".side-images #soundIcon").addEventListener("click", () =
 });
 
 document.querySelector(".side-images #muteIcon").addEventListener("click", () => {
-  isSpeechEnabled = true; // Ativa a fala
+  isSpeechEnabled = true;
   
-  // Salva o estado no localStorage
   localStorage.setItem('isSpeechEnabled', 'true');
 
   // Atualiza a interface
