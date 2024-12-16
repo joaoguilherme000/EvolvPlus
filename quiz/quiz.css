@@ -40,6 +40,7 @@
   align-items: center;
   flex: 1;
   margin-top: 4vh;
+  cursor: pointer;
 }
 
 .pergunta h1 {
@@ -57,6 +58,7 @@
   flex: 1;
   height: 95%;
   padding: 1vh;
+  cursor: pointer;
 }
 
 .mascote img {
@@ -67,6 +69,7 @@
 	-webkit-user-drag: none;
   border-radius: 50%;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 #stats {
@@ -145,6 +148,16 @@
 
 .button:active {
   transform: translate(-5px, -5px);
+}
+
+.alternativa.certa {
+  background-color: green;
+  color: white;
+}
+
+.alternativa.errada {
+  background-color: red;
+  color: white;
 }
 
 /* TELAS*/

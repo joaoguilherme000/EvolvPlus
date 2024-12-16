@@ -38,6 +38,7 @@
 
     <a href="../index.html">
       <img src="../imagens/logo.png" alt="logo" class="logo" aria-label="Voltando ao Início">
+      <h1>Evolv Plus</h1>
     </a>
 
     <button class="menu-button" aria-label="Abrir menu" id="menuButton">
@@ -117,8 +118,8 @@
 
     <div class="esquerda">
       <h1 id="mensagem" style="display: none;">Obrigado por responder esse quiz</h1>
-      <div class="pergunta" tabindex="0">
-        <h1 id="pergunta">Carregando pergunta...</h1>
+      <div class="pergunta">
+        <h1 id="pergunta" tabindex="0" aria-label="">Carregando pergunta...</h1>
       </div>
       <div class="mascote" tabindex="0">
         <img src="../imagens/mascote 2.png" aria-label="" alt="nosso mascote">
@@ -127,31 +128,28 @@
 
     <div class="direita" id="alternativas">
       <div class="borda">
-        <h3 class="alternativa" id="0" tabindex="0">
+        <h3 class="alternativa" id="0" tabindex="0" aria-label="">
           Alternativa 1
         </h3>
       </div>
       <div class="borda">
-        <h3 class="alternativa" id="1" tabindex="0">
+        <h3 class="alternativa" id="1" tabindex="0" aria-label="">
           Alternativa 2
         </h3>
       </div>
       <div class="borda">
-        <h3 class="alternativa" id="2" tabindex="0">
+        <h3 class="alternativa" id="2" tabindex="0" aria-label="">
           Alternativa 3
         </h3>
       </div>
       <div class="borda">
-        <h3 class="alternativa" id="3" tabindex="0">
+        <h3 class="alternativa" id="3" tabindex="0" aria-label="">
           Alternativa 4
         </h3>
       </div>
-      <div id="stats" style="display: none;">
-        <canvas id="graficoEstatisticas"></canvas>
-      </div>
       <div class="options" >
-        <div class="button" id="voltar" tabindex="0">Voltar</div>
-        <div class="button" id="proximo" tabindex="0">Próxima</div>
+        <div class="button" id="voltar" tabindex="0" aria-label="">Voltar</div>
+        <div class="button" id="proximo" tabindex="0" aria-label="">Próxima</div>
         <div class="button" id="estatisticas" tabindex="0" style="display: none;">Estatísticas</div>
       </div>
     </div>

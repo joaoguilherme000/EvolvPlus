@@ -13,6 +13,13 @@ header > a:first-of-type {
 	margin-left: 11vh;
 	height: 100%;
 	align-self: center;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: black;
+	justify-content: center;
+	font-size: 2vh;
+	flex-direction: row;
 	transition: padding 0.3s ease-out ,
 		width 0.3s ease-out ,
 		border 0.3s ease-out,
@@ -24,7 +31,6 @@ header > a:first-of-type {
 }
 
 .logo {
-	width: 11vh;
 	height: 100%;
 	cursor: pointer;
 }

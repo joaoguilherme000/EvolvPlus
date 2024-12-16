@@ -18,6 +18,10 @@ window.onload = async () => {
   let userCode = localStorage.getItem("userCode");
   const lastQuestionIndex = localStorage.getItem("lastQuestionIndex");
 
+  document.querySelectorAll('.alternativa').forEach(item => {
+    item.classList.remove('selected', 'certa', 'errada');
+  });
+
   if (lastQuestionIndex !== null) {
     indexPerguntaAtual = parseInt(lastQuestionIndex, 10);
   } else {
@@ -52,8 +56,24 @@ document.querySelectorAll('.alternativa').forEach((alternativa, index) => {
   alternativa.addEventListener('click', () => {
     document.querySelectorAll('.alternativa').forEach(item => item.classList.remove('selected'));
 
+    document.querySelectorAll('.alternativa').forEach(item => {
+      item.classList.remove('selected', 'certa', 'errada');
+    });
+    const perguntaAtual = perguntas[indexPerguntaAtual];
+    const respostaCorreta = perguntaAtual.alternativas[perguntaAtual.correta];
+
+    // Adiciona a classe `selected` à alternativa clicada
     alternativa.classList.add('selected');
-    alternativaSelecionada = { id: index, texto: alternativa.textContent }; // Armazenar o id e texto da alternativa
+
+    // Verifica se a alternativa clicada é a correta
+    if (alternativa.textContent.trim() === respostaCorreta) {
+      alternativa.classList.add('certa'); // Marca como correta
+    } else {
+      alternativa.classList.add('errada'); // Marca como errada
+    }
+
+    // Armazena a alternativa selecionada
+    alternativaSelecionada = { id: index, texto: alternativa.textContent };
   });
 });
 
@@ -62,6 +82,10 @@ document.getElementById("proximo").addEventListener("click", async () => {
     alert("Por favor, selecione uma alternativa antes de continuar.");
     return;
   }
+
+  document.querySelectorAll('.alternativa').forEach(item => {
+    item.classList.remove('selected', 'certa', 'errada');
+  });
 
   try {
     const userCode = localStorage.getItem("userCode");

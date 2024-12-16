@@ -1,6 +1,6 @@
 /* TELAS*/
 
-@media only screen and (max-width: 867px) {
+@media only screen and (max-width: 924px) {
 	header > a:first-of-type {
 		margin-left: 5vh;
 	}
@@ -11,16 +11,19 @@
 	}
 }
 
-@media only screen and (max-width: 747px) {
+@media only screen and (max-width: 805px) {
 	.nav-item a {
 		padding: 1vh;
 	}
 }
 
-@media only screen and (max-width: 688px) {
+@media only screen and (max-width: 750px) {
 	.nav-item a {
 		padding: 0vh;
+		font-size: 1.5vh;
 	}
+
+	
 }
 
 @media only screen and (max-width: 626px) {
